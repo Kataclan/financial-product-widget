@@ -7,7 +7,7 @@ A Sequra widget to get the financial products of an item
 
 For the solution of the test, I wanted to show how a complete widget development system would be so that it can be easily integrated into any page.
 
-First, under app folder, I developed a React app in Typescript. Around the code there are comments about the behaviour of the methods,as well as parts that are missing from code for not having enough time, or it is understood that I know how to develop them after having written some similar ones. In the READNE of the directory, the scripts that can be executed are detailed, as well as the current operation of the app.
+First, under app folder, I developed a React app in Typescript. Around the code there are comments about the behaviour of the methods, as well as parts that are missing from code for not having enough time, or it is understood that I know how to develop them after having written some similar ones. In the README of the directory, the scripts that can be executed are detailed, as well as the current operation of the app.
 
 On the other hand, we would have the 'sequra-fp-widget' directory, in which we would find our app already compiled under the app folder, and two files that would serve to "talk" with our app. After some investigation about the subject, since I have always worked on pages or complete apps and not widgets, I learned that this was done something like:
 
