@@ -1,0 +1,38 @@
+$(document).ready(function() {
+  $("ul.menu-items > li").on("click", function() {
+    $("ul.menu-items > li").removeClass("active");
+    $(this).addClass("active");
+  });
+
+  $(".attr,.attr2").on("click", function() {
+    var clase = $(this).attr("class");
+
+    $("." + clase).removeClass("active");
+    $(this).addClass("active");
+    $("#product-price").html($(this).attr("data-price"));
+    // Here we call to our widget function to update the price
+    // in the widget, like
+    // window.SequraFPWidget.changeItemValue($(this).attr("data-price"))
+  });
+
+  $(".btn-minus").on("click", function() {
+    var now = $(".section > div > input").val();
+    if ($.isNumeric(now)) {
+      if (parseInt(now) - 1 > 0) {
+        now--;
+      }
+      $(".section > div > input").val(now);
+    } else {
+      $(".section > div > input").val("1");
+    }
+  });
+
+  $(".btn-plus").on("click", function() {
+    var now = $(".section > div > input").val();
+    if ($.isNumeric(now)) {
+      $(".section > div > input").val(parseInt(now) + 1);
+    } else {
+      $(".section > div > input").val("1");
+    }
+  });
+});

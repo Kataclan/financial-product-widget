@@ -1,44 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Financial Product Widget
+============================
 
-## Available Scripts
+A Sequra widget to get the financial products of an item
 
-In the project directory, you can run:
+## Explanation
 
-### `npm start`
+For the solution of the test, I wanted to show how a complete widget development system would be so that it can be easily integrated into any page.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+First, under app folder, I developed a React app in Typescript. Around the code there are comments about the behaviour of the methods,as well as parts that are missing from code for not having enough time, or it is understood that I know how to develop them after having written some similar ones. In the READNE of the directory, the scripts that can be executed are detailed, as well as the current operation of the app.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+On the other hand, we would have the 'sequra-fp-widget' directory, in which we would find our app already compiled under the app folder, and two files that would serve to "talk" with our app. After some investigation about the subject, since I have always worked on pages or complete apps and not widgets, I learned that this was done something like:
 
-### `npm test`
+ - First by designing an IIFE (snippet) that will load the script in the head of our page. 
+ - Then we have a 'shim' with which the user can operate with our React App. This ’shim’ will be responsible for rendering our app within an iframe, and will also contain methods that will call events to which our app is registered to act accordingly. 
+ 
+For the integration part, I have not been able to make it work, but I have left you with an idea of ​​shim and snippet and how it would be integrated into the client's page in comments within the merchant_site index. To make it all wonderful, I would develop a gulp task when building the react app that also build our widget distributable files.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can clearly see that I have not developed this in 3 hours, but I wanted to show you my vision of a complete system, how I program, how I order the code, the nomenclature that I use in functions and variables, and testing of both redux and Isolated components and methods. Also the libraries that I like to use and as I order the code according to them.
 
-### `npm run build`
+I couldn't be able to make the popup, but, by this point, I would use this repository to create a develop branch from the master branch, where I create another branch called maybe 'feature/sequra-info-popup', and develop in it a component, include in the state a variable to know if we the popup is opened or not, and writting it's style files. Then, I'll create a PR to develop branch with one single commit which stages all my commits during the development, and merge it when it passes the review. Then, I'll push it to master after testing all is OK. That would be my steps in order to develop a feature.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I hope you like it!
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Alejandro Camps Guerrero
